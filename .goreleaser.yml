@@ -1,0 +1,29 @@
+version: 2
+
+project_name: shici
+
+builds:
+  - id: shici
+    main: ./cmd/shici
+    binary: shici
+    env:
+      - CGO_ENABLED=0
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  sort: asc
+
+brews:
+  - name: shici
+    homepage: https://github.com/jerrydzj/shici
+    description: mood-based chinese poetry cli
+    license: MIT
+    directory: Formula
+    test: |
+      system "#{bin}/shici", "calm"
+    repository:
+      owner: jerrydzj
+      name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_TOKEN }}"
