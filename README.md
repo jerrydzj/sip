@@ -16,3 +16,13 @@ Build binary:
 go build -o bin/shici ./cmd/shici
 ./bin/shici <mood>
 ```
+
+Tooling targets:
+
+```bash
+make fmt
+make test
+make vet
+make lint
+make build
+```
