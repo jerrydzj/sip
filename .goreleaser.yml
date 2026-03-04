@@ -1,11 +1,11 @@
 version: 2
 
-project_name: shici
+project_name: sip
 
 builds:
-  - id: shici
-    main: ./cmd/shici
-    binary: shici
+  - id: sip
+    main: ./cmd/sip
+    binary: sip
     env:
       - CGO_ENABLED=0
 
@@ -16,13 +16,13 @@ changelog:
   sort: asc
 
 brews:
-  - name: shici
-    homepage: https://github.com/jerrydzj/shici
+  - name: sip
+    homepage: https://github.com/jerrydzj/sip
     description: mood-based chinese poetry cli
     license: MIT
     directory: Formula
     test: |
-      system "#{bin}/shici", "calm"
+      system "#{bin}/sip", "calm"
     repository:
       owner: jerrydzj
       name: homebrew-tap

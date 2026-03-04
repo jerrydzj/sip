@@ -1,3 +1,3 @@
-module github.com/jerrydzj/shici
+module github.com/jerrydzj/sip
 
 go 1.25.0

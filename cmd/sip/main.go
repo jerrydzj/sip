@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jerrydzj/shici/internal/poem"
+	"github.com/jerrydzj/sip/internal/poem"
 )
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Fprintln(os.Stderr, "usage: shici <mood>")
+		fmt.Fprintln(os.Stderr, "usage: sip <mood>")
 		os.Exit(1)
 	}
 

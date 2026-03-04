@@ -1,10 +1,10 @@
-# shici MVP Plan
+# sip MVP Plan
 
 ## Goal
 Build a very simple Go CLI that returns a random Chinese poem for a user-provided mood word.
 
 ## Product Scope (v0.1.0)
-- Command: `shici <mood>`
+- Command: `sip <mood>`
 - Input: one mood word argument
 - Output: one random poem from all poems that match the mood
 - Behavior:
@@ -22,7 +22,7 @@ Build a very simple Go CLI that returns a random Chinese poem for a user-provide
 ```text
 .
 ├── cmd/
-│   └── shici/
+│   └── sip/
 │       └── main.go
 ├── internal/
 │   └── poem/
@@ -69,7 +69,7 @@ Build a very simple Go CLI that returns a random Chinese poem for a user-provide
   - `make test` -> `go test ./...`
   - `make vet` -> `go vet ./...`
   - `make lint` -> `golangci-lint run`
-  - `make build` -> `go build ./cmd/shici`
+  - `make build` -> `go build ./cmd/sip`
 - `.golangci.yml`: start small and strict enough for learning (`govet`, `errcheck`, `staticcheck`)
 
 ## CI/CD and Release Plan
@@ -86,17 +86,17 @@ Build a very simple Go CLI that returns a random Chinese poem for a user-provide
 ## Homebrew Installation Plan
 Desired install command:
 ```bash
-brew install jerrydzj/tap/shici
+brew install jerrydzj/tap/sip
 ```
 
 Release/publish flow:
 1. Configure `.goreleaser.yml` with `brews` section targeting tap repo `jerrydzj/homebrew-tap`.
-2. In `shici` GitHub repo, set `HOMEBREW_TAP_TOKEN` secret (you will do this separately).
+2. In `sip` GitHub repo, set `HOMEBREW_TAP_TOKEN` secret (you will do this separately).
 3. On tag push (e.g., `v0.1.0`), GoReleaser:
    - builds binaries
    - creates checksums
    - updates/creates the formula in `jerrydzj/homebrew-tap`
-4. User installs with `brew install jerrydzj/tap/shici`.
+4. User installs with `brew install jerrydzj/tap/sip`.
 
 ## High-Level Implementation Sequence
 1. **Bootstrap project**
@@ -121,9 +121,9 @@ Release/publish flow:
    - cut `v0.1.0` tag and verify Homebrew install path
 
 ## Definition of Done (MVP)
-- `shici <known-mood>` prints one random poem from matching poems
-- `shici <unknown-mood>` prints not-found message and exits non-zero
+- `sip <known-mood>` prints one random poem from matching poems
+- `sip <unknown-mood>` prints not-found message and exits non-zero
 - `make test`, `make vet`, `make lint`, `make build` all pass locally
 - CI passes on PR
 - Tag release publishes binaries and updates Homebrew tap formula
-- Fresh machine install works with `brew install jerrydzj/tap/shici`
+- Fresh machine install works with `brew install jerrydzj/tap/sip`

@@ -1,8 +1,8 @@
 .PHONY: help fmt test vet lint build
 
 GO ?= go
-CMD_PATH ?= ./cmd/shici
-BINARY ?= shici
+CMD_PATH ?= ./cmd/sip
+BINARY ?= sip
 GOCACHE ?= $(CURDIR)/.cache/go-build
 
 help:
@@ -11,7 +11,7 @@ help:
 	@echo "  make test   - run unit tests"
 	@echo "  make vet    - run go vet"
 	@echo "  make lint   - run golangci-lint"
-	@echo "  make build  - build binary to ./bin/shici"
+	@echo "  make build  - build binary to ./bin/sip"
 
 fmt:
 	GOCACHE=$(GOCACHE) $(GO) fmt ./...

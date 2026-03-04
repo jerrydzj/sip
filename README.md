@@ -1,28 +1,45 @@
-# shici
+# sip
 
-`shici` is a Go CLI for mood-based Chinese poetry.
+`sip` is a tiny mood-to-poem CLI.
+Type one mood word and get a Chinese poem you can sit with.
 
-## Development
+Why `sip`:
+- Classical Chinese poets often sipped tea or wine while writing.
+- In this CLI, you can now "sip melancholy" from your terminal.
 
-Run directly:
+## Quick Start
+
+Prerequisite: [Homebrew](https://brew.sh)
+
+Install:
 
 ```bash
-go run ./cmd/shici <mood>
+brew install jerrydzj/tap/sip
 ```
 
-Build binary:
+Run:
 
 ```bash
-go build -o bin/shici ./cmd/shici
-./bin/shici <mood>
+sip <mood>
 ```
 
-Tooling targets:
+Examples:
 
 ```bash
-make fmt
-make test
-make vet
-make lint
-make build
+sip calm
+sip lonely
+sip hopeful
+```
+
+If a mood is not supported yet, `sip` prints:
+
+```text
+No poem found for mood: <mood>
+```
+
+## Upgrade or Remove
+
+```bash
+brew upgrade jerrydzj/tap/sip
+brew uninstall sip
 ```
