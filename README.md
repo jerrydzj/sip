@@ -1,4 +1,4 @@
-# sip
+# 🍶 sip
 
 `sip` is a tiny mood-to-poem CLI.
 Type one mood word and get a Chinese poem you can sit with.
